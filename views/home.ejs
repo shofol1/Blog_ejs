@@ -1,6 +1,18 @@
 <%- include('partials/header'); -%>
 
-<h1>Contact</h1>
-<p><%=homeStartingContent%></p>
+<body>
+  <div class="container">
+    <h1>Home</h1>
+    <p><%=homeStartingContent%></p>
+    <%composePost.forEach((post)=>{%>
+    <h1><%= post.title%></h1>
+    <p>
+      <%= post.post.substring(0,100)+"...."%>
+      <a href="/posts/`<%= post.title%> `" `>Read more </a>
+    </p>
+
+    <% })%>
+  </div>
+</body>
 
 <%- include('partials/footer')-%>
